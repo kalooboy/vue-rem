@@ -26,7 +26,7 @@ this.$size.dpr获取当前设备的dpr,此时我们可以根据设备的dpr来�
 this.$size.rem获取当前设备的根font-size
 
     一个简单的例子:
-`如某个组件是这样的  
+```如某个组件是这样的  
 <template lang='pug'>  
     div.back helloworld  
 </template>  
@@ -60,6 +60,6 @@ export default {
 </style>  
 
 此时我们调整浏览器的窗口会实时得到最新的根font-size.  
-因此该插件能实时根据当前窗口的大小或方向实时更新根部的font-size  `
+因此该插件能实时根据当前窗口的大小或方向实时更新根部的font-size  ```
 
 
