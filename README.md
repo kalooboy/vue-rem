@@ -6,12 +6,12 @@
 npm install vue-rem -S
 
     使用: 
-import rem from 'vue-rem'
+'''import rem from 'vue-rem'
 Vue.use(rem, {
     design: 750,
     size: 100,
     minWidth:700
-})
+})'''
 
     参数说明:
 design表示设计尺寸,size表示的是缩放比例尺,比如size = 100时表示 实际使用尺寸缩小100倍,比如设计尺寸的750px,这个时候如果设计稿上的一个区域的宽度为375px我们就写成3.75rem.
@@ -60,6 +60,6 @@ export default {
 </style>  
 
 此时我们调整浏览器的窗口会实时得到最新的根font-size.  
-因此该插件能实时根据当前窗口的大小或方向实时更新根部的font-size  ```
+因此该插件能实时根据当前窗口的大小或方向实时更新根部的font-size```
 
 
