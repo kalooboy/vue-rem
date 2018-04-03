@@ -46,11 +46,25 @@ class setRem{
     if (window.innerWidth > this.minWidth) {
       document.getElementsByTagName("html")[0].style.fontSize =
         rem2px + "px";
-      this.rem = rem2px
+      var px = window.getComputedStyle(document.getElementsByTagName("html")[0]).fontSize//获取rem的px值是不是和设置的一致
+      if (rem2px !== px) {
+        document.getElementsByTagName("html")[0].style.cssText = 'font-size: ' + rem2px * (rem2px / px) +"px";//如果不一致按比例重新设置
+        this.rem = rem2px  * (rem2px / px)
+      } else {
+        this.rem = rem2px
+      }
     } else {
+      var minPx = this.minWidth / this.design * this.size
       document.getElementsByTagName("html")[0].style.fontSize =
-        this.minWidth / this.design * this.size + "px";
-      this.rem = this.minWidth / this.design * this.size
+      minPx + "px";
+      var px = window.getComputedStyle(document.getElementsByTagName("html")[0]).fontSize
+      if (minPx !== px) {
+        document.getElementsByTagName("html")[0].style.cssText = 'font-size: ' + minPx*(minPx/px) + "px";
+        this.rem = minPx*(minPx/px)
+      } else {
+        this.rem = minPx
+      }
+
     //该句在当物理尺寸小于所设置的最低尺寸时,屏幕不再缩小
     }
   };
